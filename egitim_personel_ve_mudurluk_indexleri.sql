@@ -25,3 +25,17 @@ select * from personel
 where email = 'servet.turan@gmail.com';
 
 update personel set email = 'servet.turan2@gmail.com' where personel_id = 5084;
+
+-- function based index ornegi
+create index pers_ni2 on personel (upper(ad));
+
+select * from personel where upper(ad) = 'SERKAN';
+
+--alistirma 1
+
+create index personel_nil on personel(personel_id);
+
+-- alistirma 4
+
+create index fb_mudurluk on mudurluk(lower(il_adi));
+
